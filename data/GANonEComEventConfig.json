@@ -1,10 +1,10 @@
 {
 	"anonymousId":"cid",	
+	"userId":"cid",
 	"event":"ea",
 	"properties.category":"ec",
 	"properties.label":"el",
 	"properties.value":"ev",
-	"properties.name":"cd1",
-	"properties.revenue":"cm1"
+	"properties.title":"cd1"
 }
 
