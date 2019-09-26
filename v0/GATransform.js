@@ -82,9 +82,12 @@ function responseBuilderSimple (parameterMap, jsonQobj, hitType, mappingJson, cr
 	responseMap.set("header",{});
 
 	//Need to set user_id outside of payload
-	jsonQobj.find('anonymousId').each(function (index, path, value){
-		responseMap.set("user_id",String(value));
-	});
+	//Check userId - if not there then check anonymousId
+	if(jsonQobj.find('userId').value()[0]){
+		responseMap.set("user_id",jsonQobj.find('userId').value()[0]);
+	} else if (jsonQobj.find('anonymousId').value()[0]){
+		responseMap.set("user_id",jsonQobj.find('anonymousId').value()[0]);
+	}
 	
 	//Now add static parameters to the parameter map
 	parameterMap.set("v","1");
