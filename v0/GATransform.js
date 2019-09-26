@@ -79,10 +79,10 @@ function responseBuilderSimple (parameterMap, jsonQobj, hitType, mappingJson, cr
 	
 	responseMap.set("request_config", mapToObj(requestConfigMap));
 
-    responseMap.set("header",{});
+	responseMap.set("header",{});
 
 	//Need to set user_id outside of payload
-	jsonQobj.find('rl_anonymous_id').each(function (index, path, value){
+	jsonQobj.find('anonymousId').each(function (index, path, value){
 		responseMap.set("user_id",String(value));
 	});
 	
@@ -90,7 +90,7 @@ function responseBuilderSimple (parameterMap, jsonQobj, hitType, mappingJson, cr
 	parameterMap.set("v","1");
 	parameterMap.set("t",String(hitType));
 
-	jsonQobj.find("rl_destination").each((i, p, value) => {
+	jsonQobj.find("destination").each((i, p, value) => {
 		parameterMap.set("tid", String(value.Config.trackingId));
 	  });
 	  //   Add the customer credentials
@@ -106,11 +106,13 @@ function responseBuilderSimple (parameterMap, jsonQobj, hitType, mappingJson, cr
 	jsonQ.each(mappingJson, function(sourceKey, destinationKey){
 		//The structure for page messages is the root, so we have to reset the reference
 		//point before traversing for every key
-		var tempObj = jsonQobj.find('rl_context').parent();
+		var tempObj = jsonQobj.find('context').parent();
+		
 
 		//console.log(tempObj.length)
 
 		var pathElements = sourceKey.split('.');
+		
 		//console.log(loopCounter++);
 
 		//Now take each path element and traverse the structure
@@ -414,8 +416,10 @@ function processEComGenericEvent(jsonQobj){
   function processSingleMessage(jsonQobj){
 
 	//Route to appropriate process depending on type of message received
-	var messageType = String(jsonQobj.find('rl_type').value()).toLowerCase();
-	//console.log(String(messageType));
+	
+	//var messageType = String(jsonQobj.find('rl_type').value()).toLowerCase();
+	var messageType = String(jsonQobj.find('type').value()).toLowerCase();
+
 	switch (messageType){
 		case 'page':
 			//console.log('processing page');
@@ -424,7 +428,7 @@ function processEComGenericEvent(jsonQobj){
 			//console.log('processing screen');
 			return   processScreenviews(jsonQobj);
 		case 'track':
-			var eventType = String(jsonQobj.find('rl_event').value()).toLowerCase();
+			var eventType = String(jsonQobj.find('event').value()).toLowerCase();
 			//console.log(eventType);	
 			//There can be both ECommerce as well as Non-ECommerce 'track' events
 			//Need to handle individually
@@ -491,7 +495,7 @@ function processEComGenericEvent(jsonQobj){
 function process (jsonQobj){
 	var respList = [];
 	var counter = 0;
-	jsonQobj.find("rl_message").each(function (index, path, value){
+	jsonQobj.find("message").parent().each(function (index, path, value){
 		result = processSingleMessage(jsonQ(value));
 		respList.push(result);
 		
