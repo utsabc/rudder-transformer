@@ -1,5 +1,7 @@
 FROM node:10.16.0-alpine
 
+RUN apk add python make g++
+
 # Create app directory
 WORKDIR /app
 
@@ -9,5 +11,4 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 9090
 CMD [ "npm", "start" ]
