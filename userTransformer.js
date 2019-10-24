@@ -57,6 +57,11 @@ const filterEventNames = [
   "store_open",
   "unverified_revenue"
 ];
+const IOS_USER_AGENT =
+  "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148";
+
+const IOS_PRESENT_UA = "ios";
+
 require("./util/logUtil");
 
 function start(port) {
@@ -126,6 +131,10 @@ function start(port) {
               //And finally a counter for catching every n-th message
               var messageCounter = 0;
 
+              var batchLength = requestJson.length;
+              var GAbatchLengthToSend = Math.ceil(batchLength / 4);
+              var GAmessageList = [];
+
               jsonQobj.find("rl_message").each(function(index, path, value) {
                 //Extract the rl_anonymous_id for direct inclusion under
                 //rl_message
@@ -177,10 +186,16 @@ function start(port) {
                   "category"
                 ] = eventName;
 
+                // fix UA, as Torpedo ios sdk is using older version
+                var userAgent =
+                  messageObj["rl_message"]["rl_context"]["rl_user_agent"];
+                messageObj["rl_message"]["rl_context"]["rl_user_agent"] =
+                  userAgent == IOS_PRESENT_UA ? IOS_USER_AGENT : userAgent;
+
                 console.log(messageObj);
 
                 //Add the GA message
-                messageList.push(messageObj);
+                GAmessageList.push(messageObj);
 
                 //Send only unfiltered events to Amplitude
 
@@ -205,6 +220,12 @@ function start(port) {
                   messageList.push(messageObjAM);
                 }
               });
+
+              const shuffledList = GAmessageList.sort(
+                () => 0.5 - Math.random()
+              );
+              const listToSend = shuffledList.splice(0, GAbatchLengthToSend);
+              messageList.push(...listToSend);
 
               //Construct overall payload
               var responseObj = {};
