@@ -11,7 +11,8 @@ const {
 const {
   removeUndefinedValues,
   toStringValues,
-  defaultGetRequestConfig
+  defaultGetRequestConfig,
+  defaultRequestConfig
 } = require("../util");
 
 // Basic response builder
@@ -50,14 +51,15 @@ function responseBuilderSimple(
     finalPayload["cid"] = message.userId;
   }
 
-  const response = {
-    endpoint: GA_ENDPOINT,
-    requestConfig: defaultGetRequestConfig,
-    header: {},
-    userId: message.anonymousId,
-    payload: finalPayload
-  };
-  //console.log("response ", response);
+  const response = defaultRequestConfig();
+  response.method = defaultGetRequestConfig.requestMethod;
+  response.endpoint = GA_ENDPOINT;
+  response.userId =
+    message.userId && message.userId.length > 0
+      ? message.userId
+      : message.anonymousId;
+  response.params = finalPayload;
+
   return response;
 }
 
@@ -426,21 +428,12 @@ function processSingleMessage(message, destination) {
 }
 
 // Iterate over input batch and generate response for each message
-async function process(events) {
-  const respList = [];
-  events.forEach(event => {
-    try {
-      const result = processSingleMessage(event.message, event.destination);
-      if (!result.statusCode) {
-        result.statusCode = 200;
-      }
-      respList.push(result);
-    } catch (error) {
-      respList.push({ statusCode: 400, error: error.message });
-    }
-  });
-
-  return respList;
+async function process(event) {
+  const result = processSingleMessage(event.message, event.destination);
+  if (!result.statusCode) {
+    result.statusCode = 200;
+  }
+  return result;
 }
 
 exports.process = process;
