@@ -2,7 +2,6 @@
 const fs = require("fs");
 const path = require("path");
 const _ = require("lodash");
-const set = require("set-value");
 
 const getMappingConfig = (config, dir) => {
   const mappingConfig = {};
@@ -17,8 +16,6 @@ const getMappingConfig = (config, dir) => {
 };
 
 const isDefined = x => !_.isUndefined(x);
-const isNotNull = x => x != null;
-const isDefinedAndNotNull = x => isDefined(x) && isNotNull(x);
 
 const toStringValues = obj => {
   Object.keys(obj).forEach(key => {
@@ -44,16 +41,10 @@ const getDateInFormat = date => {
 };
 
 const removeUndefinedValues = obj => _.pickBy(obj, isDefined);
-const removeNullValues = obj => _.pickBy(obj, isNotNull);
-const removeUndefinedAndNullValues = obj => _.pickBy(obj, isDefinedAndNotNull);
 
-const updatePayload = (currentKey, eventMappingArr, value, payload) => {
-  eventMappingArr.map(obj => {
-    if (obj.rudderKey === currentKey) {
-      set(payload, obj.expectedKey, value);
-    }
-  });
-  return payload;
+const isObject = value => {
+  var type = typeof value;
+  return value != null && (type == "object" || type == "function");
 };
 
 const toSnakeCase = str => {
@@ -77,11 +68,6 @@ function validTimestamp(input) {
   return new Date(input).getTime() > 0;
 }
 
-const isObject = value => {
-  var type = typeof value;
-  return value != null && (type == "object" || type == "function");
-};
-
 const defaultGetRequestConfig = {
   requestFormat: "PARAMS",
   requestMethod: "GET"
@@ -90,15 +76,6 @@ const defaultGetRequestConfig = {
 const defaultPostRequestConfig = {
   requestFormat: "JSON",
   requestMethod: "POST"
-};
-
-const defaultDeleteRequestConfig = {
-  requestFormat: "JSON",
-  requestMethod: "DELETE"
-};
-const defaultPutRequestConfig = {
-  requestFormat: "JSON",
-  requestMethod: "PUT"
 };
 
 const defaultRequestConfig = () => {
@@ -123,16 +100,11 @@ module.exports = {
   toStringValues,
   getDateInFormat,
   removeUndefinedValues,
-  removeNullValues,
-  removeUndefinedAndNullValues,
   isObject,
   toSnakeCase,
   toSafeDBString,
   validTimestamp,
   defaultGetRequestConfig,
   defaultPostRequestConfig,
-  defaultDeleteRequestConfig,
-  defaultPutRequestConfig,
-  updatePayload,
   defaultRequestConfig
 };

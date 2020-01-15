@@ -6,7 +6,7 @@ const {
   destinationConfigKeys,
   endpoints
 } = require("./config");
-const eventMapping = require("./data/eventMapping");
+const { EventConfig, payloadMapping } = require("./data/eventMapping");
 const {
   defaultPostRequestConfig,
   removeUndefinedAndNullValues
@@ -39,7 +39,7 @@ function responseBuilder(payload, message, branchConfig) {
 function getUserData(message) {
   let context = message.context;
 
-  return removeUndefinedAndNullValues({
+  return {
     os: context.os.name,
     os_version: context.os.version,
     app_version: context.app.version,
@@ -49,7 +49,7 @@ function getUserData(message) {
     idfv: get(context, "idfv") ? context.android_id : null,
     aaid: get(context, "aaid") ? context.android_id : null,
     developer_identity: message.anonymousId
-  });
+  };
 }
 
 function mapPayload(rudderPropetiesArr, rudderPropertiesObj, config) {
@@ -58,12 +58,10 @@ function mapPayload(rudderPropetiesArr, rudderPropertiesObj, config) {
   let event_data = {};
 
   rudderPropetiesArr.map(rudderKey => {
-    const filteredKey = Object.keys(eventMapping.EventConfig[config]).find(
-      key => {
-        return key === rudderKey;
-      }
-    );
-    const desiredKey = eventMapping.EventConfig[config][filteredKey];
+    const filteredKey = Object.keys(EventConfig[config]).find(key => {
+      return key === rudderKey;
+    });
+    const desiredKey = EventConfig[config][filteredKey];
 
     switch (config) {
       case "TransactionEventConfig":
@@ -131,7 +129,6 @@ function getConfig(rudderEvent) {
 function commonPayload(message, rawPayload, type) {
   let rudderPropetiesArr;
   let rudderPropertiesObj;
-  let rudderEvent;
 
   switch (type) {
     case EventType.TRACK:
@@ -139,17 +136,16 @@ function commonPayload(message, rawPayload, type) {
         ? Object.keys(message.properties)
         : null;
       rudderPropertiesObj = message.properties;
-      rudderEvent = message.event.toLowerCase();
       break;
     case EventType.IDENTIFY:
       rudderPropetiesArr = get(message.context, "traits")
         ? Object.keys(message.context.traits)
         : null;
       rudderPropertiesObj = message.context.traits;
-      rudderEvent = message.userId.toLowerCase();
       break;
   }
 
+  const rudderEvent = message.event.toLowerCase();
   const payload = mapPayload(
     rudderPropetiesArr,
     rudderPropertiesObj,
@@ -163,31 +159,27 @@ function commonPayload(message, rawPayload, type) {
   return rawPayload;
 }
 
-function updateNameValue(eventName, acceptedNames) {
-  return acceptedNames.find(obj => {
-    return obj.rudderValue.toLowerCase() === eventName.toLowerCase();
-  }).expectedValue;
-}
-
 function getIdentifyPayload(message, branchConfig) {
   let rawPayload = {
-    branch_key: branchConfig.BRANCH_KEY
+    branch_key: branchConfig.BRANCH_KEY,
+    name: updateNameValue(
+      rawPayload,
+      message.userId,
+      payloadMapping.common.acceptedNames
+    )
   };
-  rawPayload.name = updateNameValue(
-    message.userId,
-    eventMapping.mapPayload.common.acceptedNames
-  );
   return commonPayload(message, rawPayload, message.type);
 }
 
 function getTrackPayload(message, branchConfig) {
   let rawPayload = {
-    branch_key: branchConfig.BRANCH_KEY
+    branch_key: branchConfig.BRANCH_KEY,
+    name: updateNameValue(
+      rawPayload,
+      message.event,
+      payloadMapping.common.acceptedNames
+    )
   };
-  rawPayload.name = updateNameValue(
-    message.event,
-    eventMapping.mapPayload.common.acceptedNames
-  );
   return commonPayload(message, rawPayload, message.type);
 }
 

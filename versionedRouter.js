@@ -43,31 +43,29 @@ versions.forEach(version => {
       const events = ctx.request.body;
       logger.debug("[DT] Input events: " + JSON.stringify(events));
       const respList = [];
-      await Promise.all(
-        events.map(async event => {
-          try {
-            let respEvents = await destHandler.process(event);
-            if (!Array.isArray(respEvents)) {
-              respEvents = [respEvents];
-            }
-            respList.push(
-              ...respEvents.map(ev => {
-                return { output: ev, metadata: event.metadata };
-              })
-            );
-          } catch (error) {
-            logger.error(error);
-
-            respList.push({
-              statusCode: 400,
-              error:
-                error.message || "Error occurred while processing payload.",
-              metadata: event.metadata
-            });
+      await events.forEach(async event => {
+        try {
+          let respEvents = await destHandler.process(event);
+          if (!Array.isArray(respEvents)) {
+            respEvents = [respEvents];
           }
-        })
-      );
+          respList.push(
+            ...respEvents.map(ev => {
+              return { output: ev, metadata: event.metadata };
+            })
+          );
+        } catch (error) {
+          logger.error(error);
+
+          respList.push({
+            statusCode: 400,
+            error: error.message || "Error occurred while processing payload.",
+            metadata: event.metadata
+          });
+        }
+      });
       logger.debug("[DT] Output events: " + JSON.stringify(respList));
+
       ctx.body = respList;
     });
   });
