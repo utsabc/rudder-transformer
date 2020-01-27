@@ -19,22 +19,39 @@ var authorizationHeader;
 // The "Authorization: Bearer <token>" header element needs to be passed for
 // authentication for all SFDC REST API calls
 async function getSFDCHeader(destination) {
+
+  /*console.log(SF_TOKEN_REQUEST_URL +
+      "?username=" +
+      destination.Config.userName +
+      "&password=" +
+      encodeURIComponent(destination.Config.password) +
+      encodeURIComponent(destination.Config.initialAccessToken) +
+      "&client_id=" +
+      //destination.Config.consumerKey +
+      '3MVG9G9pzCUSkzZtwZE5N1o0HSvHGadNDfhB2LYcTHJv6.Y42UyK6I6_OkjXFGNONG5zAjZ1Gqbl5Si0tLoOq'+
+      "&client_secret=" +
+      //destination.Config.consumerSecret +
+      '08306CE675F0DE398C60E26A3D6522578FF6BEADB7F7AA76BD393F4FEF0FA65F' +
+      "&grant_type=password");*/
   const response = await axios.post(
     SF_TOKEN_REQUEST_URL +
       "?username=" +
       destination.Config.userName +
       "&password=" +
-      destination.Config.password +
-      destination.Config.initialAccessToken +
+      encodeURIComponent(destination.Config.password )+
+      encodeURIComponent(destination.Config.initialAccessToken) +
       "&client_id=" +
-      destination.Config.consumerKey +
+      //destination.Config.consumerKey +
+      '3MVG9G9pzCUSkzZtwZE5N1o0HSvHGadNDfhB2LYcTHJv6.Y42UyK6I6_OkjXFGNONG5zAjZ1Gqbl5Si0tLoOq'+
       "&client_secret=" +
-      destination.Config.consumerSecret +
+      //destination.Config.consumerSecret +
+      '08306CE675F0DE398C60E26A3D6522578FF6BEADB7F7AA76BD393F4FEF0FA65F' +
       "&grant_type=password",
     {}
   );
 
-  return "Bearer " + response.data.access_token;
+  //console.log(response);
+  return ["Bearer " + response.data.access_token, response.data.instance_url];
 }
 
 function getParamsFromConfig(message, destination) {
@@ -112,6 +129,7 @@ async function responseBuilderSimple(
     userId: message.anonymousId,
     payload: { ...customParams, ...payload }
   };
+  //console.log(response);
   return response;
 }
 
@@ -174,7 +192,7 @@ async function processSingleMessage(message, destination) {
   let response;
   if (message.type === EventType.IDENTIFY) {
     response = await processIdentify(message, destination);
-    console.log(response);
+    //console.log(response);
   } else {
     response = {
       statusCode: 400,
@@ -184,13 +202,11 @@ async function processSingleMessage(message, destination) {
   return response;
 }
 
-// Iterate over input batch and generate response for each message
-async function process(events) {
-  let respList = [];
-  respList = await Promise.all(
-    events.map(event => processSingleMessage(event.message, event.destination))
-  );
-  return respList;
+async function process(event) { 
+  //   console.log(JSON.stringify(event));
+  // console.log('==')
+  //   console.log(processSingleMessage(event.message, event.destination))
+  return processSingleMessage(event.message, event.destination);
 }
 
 exports.process = process;
