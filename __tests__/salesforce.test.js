@@ -15,8 +15,7 @@ test(`${name} Tests`, async () => {
   );
   const inputData = JSON.parse(inputDataFile);
   const expectedData = JSON.parse(outputDataFile);
-  const output = await transformer.process(inputData);
-
+  
   inputData.forEach(async (input, index) => {
     var output = transformer.process(input); 
     output.header.Authorization = ''
