@@ -206,6 +206,26 @@ function processIdentify(message, destination) {
   return buildResponse(message, properties, endpoint);
 }
 
+function processGroup(message, destination) {
+  const apiKey = destination.Config.apiKey;
+  const timestamp = toUnixTimestamp(message.originalTimestamp);
+  const endpoint = ENDPOINT.IDENTIFY;
+
+  let properties = JSON.parse(JSON.stringify(message.traits));
+  properties = prefix("Group", properties);
+
+  if (message.groupId) {
+    properties["Group - id"] = message.groupId;
+  }
+
+  properties._k = apiKey;
+  properties._p = message.userId ? message.userId : message.anonymousId;
+  properties._t = timestamp;
+  properties._d = 1;
+
+  return buildResponse(message, properties, endpoint);
+}
+
 function processTrack(message, destination) {
   const apiKey = destination.Config.apiKey;
   const event = message.event;
@@ -318,6 +338,11 @@ function process(event) {
       break;
     case EventType.ALIAS:
       response = processAlias(message, destination);
+      response.statusCode = 200;
+      respList.push(response);
+      break;
+    case EventType.GROUP:
+      response = processGroup(message, destination);
       response.statusCode = 200;
       respList.push(response);
       break;
