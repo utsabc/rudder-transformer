@@ -42,7 +42,7 @@ function createSingleMessageBasicStructure(message) {
   ]);
 }
 
-//https://www.geeksforgeeks.org/how-to-create-hash-from-string-in-javascript/
+// https://www.geeksforgeeks.org/how-to-create-hash-from-string-in-javascript/
 function stringToHash(string) {
   var hash = 0;
 
@@ -239,6 +239,7 @@ function processTransaction(message) {
 
 function process(event) {
   const respList = [];
+  console.log(event);
   const { message, destination } = event;
   const messageType = message.type.toLowerCase();
   const eventType = message.event ? message.event.toLowerCase() : undefined;
@@ -262,6 +263,7 @@ function process(event) {
   }
 
   toSendEvents.forEach(sendEvent => {
+    console.log(sendEvent);
     const result = processSingleMessage(sendEvent, destination);
     if (!result.statusCode) {
       result.statusCode = 200;
