@@ -263,7 +263,7 @@ function process(event) {
   }
 
   toSendEvents.forEach(sendEvent => {
-    console.log(sendEvent);
+    // console.log(sendEvent);
     const result = processSingleMessage(sendEvent, destination);
     if (!result.statusCode) {
       result.statusCode = 200;
