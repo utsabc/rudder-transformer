@@ -239,7 +239,7 @@ function processTransaction(message) {
 
 function process(event) {
   const respList = [];
-  console.log(event);
+  console.log(JSON.stringify(event));
   const { message, destination } = event;
   const messageType = message.type.toLowerCase();
   const eventType = message.event ? message.event.toLowerCase() : undefined;
