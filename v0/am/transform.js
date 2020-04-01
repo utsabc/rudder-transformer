@@ -51,7 +51,7 @@ function stringToHash(string) {
   for (i = 0; i < string.length; i++) {
     char = string.charCodeAt(i);
     hash = (hash << 5) - hash + char;
-    hash = hash & hash;
+    hash &= hash;
   }
 
   return Math.abs(hash);
@@ -142,7 +142,7 @@ function processSingleMessage(message, destination) {
   const payloadObjectName = "events";
   let evType;
   let category = ConfigCategory.DEFAULT;
-
+  let isRevenue
   var messageType = message.type.toLowerCase();
   switch (messageType) {
     case EventType.IDENTIFY:
@@ -161,9 +161,12 @@ function processSingleMessage(message, destination) {
     case EventType.TRACK:
       evType = message.event;
 
-      if (message.products && message.products.length > 0) {
-        let isRevenue = false;
-        message.products.forEach(product => {
+      if (
+        message.properties.products &&
+        message.properties.products.length > 0
+      ) {
+         isRevenue = false;
+        message.properties.products.forEach(product => {
           if (isRevenueEvent(product)) {
             isRevenue = true;
           }
@@ -188,7 +191,11 @@ function processSingleMessage(message, destination) {
           category = nameToEventMap[evType].category;
           break;
         default:
-          category = ConfigCategory.DEFAULT;
+          if (isRevenue) {
+            category = ConfigCategory.REVENUE;
+          } else {
+            category = ConfigCategory.DEFAULT;
+          }
           break;
       }
       break;
@@ -244,6 +251,8 @@ function process(event) {
   const messageType = message.type.toLowerCase();
   const eventType = message.event ? message.event.toLowerCase() : undefined;
   const toSendEvents = [];
+  console.log("================");
+  console.log(messageType);
   if (
     messageType === EventType.TRACK &&
     (eventType === Event.PRODUCT_LIST_VIEWED.name ||
