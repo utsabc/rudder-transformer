@@ -148,7 +148,7 @@ async function getTransformedJSON(message, mailChimpConfig) {
   const updateSubscription = get(message, "integrations.MailChimp")
     ? message.integrations.MailChimp
     : undefined;
-
+  if(message.context.traits.email) {
   const emailExists = await checkIfMailExists(
     mailChimpConfig,
     message.context.traits.email
@@ -161,6 +161,13 @@ async function getTransformedJSON(message, mailChimpConfig) {
     emailExists,
     mailChimpConfig
   );
+  }
+  else 
+    return {
+      error: "Email ID is missing ",
+      statusCode: 400
+    };
+  
   return { ...rawPayload };
 }
 
@@ -202,7 +209,10 @@ async function processIdentify(message, destination) {
 
 async function processSingleMessage(message, destination) {
   if (message.type !== EventType.IDENTIFY) {
-    throw new Error(`message type ${message.type} is not supported`);
+    return {
+      error: "message type not supported",
+      statusCode: 400
+    };
   }
 
   return processIdentify(message, destination);

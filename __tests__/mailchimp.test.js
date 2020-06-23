@@ -16,10 +16,14 @@ test(`${name} Tests`, async () => {
   );
   const inputData = JSON.parse(inputDataFile);
   const expectedData = JSON.parse(outputDataFile);
-  await Promise.all(
-    inputData.map(async (input, index) => {
+  // await Promise.all(
+    inputData.foreach(input, index) => {
       const output = await transformer.process(input);
+      console.log("index:: "+index);
+      console.log("output::"+JSON.stringify(output));
+      console.log("ecpected::"+JSON.stringify(expectedData[index]));
       expect(output).toEqual(expectedData[index]);
-    })
-  );
+      console.log("indexedDone::"+index);
+    });
+  // );
 });

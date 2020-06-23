@@ -122,5 +122,264 @@
       "type": "identify",
       "userId": "userId12345"
     }
+  },
+  {
+    "destination": {
+      "ID": "1Tdi0lpXwSVwXG1lcdP2pXHKrJ6",
+      "Name": "test-mc",
+      "DestinationDefinition": {
+        "ID": "1SujZGrVEPqYmpUJcV4vSl9tfxn",
+        "Name": "MC",
+        "DisplayName": "MailChimp"
+      },
+      "Config": {
+        "apiKey": "94f71917d8522770c97449b0c90caa4c-us20",
+        "audienceId": "df42a82d07",
+        "datacenterId": 20,
+        "testKey": "cdcdcd"
+      },
+      "Enabled": true,
+      "Transformations": []
+    },
+    "message": {
+      "anonymousId": "userId12345",
+      "channel": "web",
+      "context": {
+        "MailChimp":{
+          "listId":"nskjdsnckjdsc6789"
+        },
+        "app": {
+          "build": "1.0.0",
+          "name": "RudderLabs JavaScript SDK",
+          "namespace": "com.rudderlabs.javascript",
+          "version": "1.0.0"
+        },
+        "ip": "0.0.0.0",
+        "library": {
+          "name": "RudderLabs JavaScript SDK",
+          "version": "1.0.0"
+        },
+        "locale": "en-US",
+        "os": {
+          "name": "",
+          "version": ""
+        },
+        "screen": {
+          "density": 2
+        },
+        "traits": {
+          "anonymousId": "userId12345",
+          "firstName": "Bob",
+          "lastName": "Dole",
+          "key_1":{
+          "child_key1":"child_value1",
+          "child_key2":{
+            "child_key21":"child_value21",
+            "child_key22":"child_value22"
+          }
+        }
+        },
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
+      },
+      "integrations": {
+        "All": true,
+        "MailChimp":true
+      },
+      "messageId": "21e475b2-3694-477b-afb6-5b94a81aac21",
+      "originalTimestamp": "2019-11-15T10:22:32Z",
+      "receivedAt": "2019-11-15T15:52:37+05:30",
+      "request_ip": "[::1]:62921",
+      "sentAt": "2019-11-15T10:22:37Z",
+      "source_id": "1TdhTcwsUVOeEMWyPUpQIgF3pYr",
+      "timestamp": "2019-11-15T15:52:32+05:30",
+      "type": "identify",
+      "userId": "userId12345"
+    }
+  },
+  {
+    "destination": {
+      "Config": {
+        "apiKey": "9432f11f70f8ce386f5110c8c924b3ec4f825256",
+        "prefixProperties": true,
+        "useNativeSDK": false
+      },
+      "DestinationDefinition": {
+        "DisplayName": "Kiss Metrics",
+        "ID": "1WhbSZ6uA3H5ChVifHpfL2H6sie",
+        "Name": "KISSMETRICS"
+      },
+      "Enabled": true,
+      "ID": "1WhcOCGgj9asZu850HvugU2C3Aq",
+      "Name": "Kiss Metrics",
+      "Transformations": []
+    },
+    "message": {
+      "anonymousId": "e6ab2c5e-2cda-44a9-a962-e2f67df78bca",
+      "channel": "mobile",
+      "name":"Contact Us",
+      "context": {
+        "app": {
+          "build": "1.0.0",
+          "name": "RudderLabs Android SDK",
+          "namespace": "com.rudderlabs.javascript",
+          "version": "1.0.5"
+        },
+        "ip": "0.0.0.0",
+        "library": {
+          "name": "RudderLabs JavaScript SDK",
+          "version": "1.0.5"
+        },
+        "locale": "en-GB",
+        "os": {
+          "name": "",
+          "version": ""
+        },
+        "screen": {
+          "density": 2
+        },
+        "traits": {},
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+      },
+      "integrations": {
+        "All": true
+      },
+      "messageId": "dd266c67-9199-4a52-ba32-f46ddde67312",
+      "originalTimestamp": "2020-01-24T06:29:02.358Z",
+      "receivedAt": "2020-01-24T11:59:02.403+05:30",
+      "request_ip": "[::1]:53708",
+      "sentAt": "2020-01-24T06:29:02.359Z",
+      "timestamp": "2020-01-24T11:59:02.402+05:30",
+      "type": "screen",
+      "userId": "hjikl"
+    },
+    "metadata": {
+      "anonymousId": "e6ab2c5e-2cda-44a9-a962-e2f67df78bca",
+      "destinationId": "1WhcOCGgj9asZu850HvugU2C3Aq",
+      "destinationType": "MAILCHIMP",
+      "jobId": 1,
+      "messageId": "dd266c67-9199-4a52-ba32-f46ddde67312",
+      "sourceId": "1WjrlZIy1d41MCceOrFbDVPnOPY"
+    }
+  },
+  {
+    "destination": {
+      "ID": "1Tdi0lpXwSVwXG1lcdP2pXHKrJ6",
+      "Name": "test-mc",
+      "DestinationDefinition": {
+        "ID": "1SujZGrVEPqYmpUJcV4vSl9tfxn",
+        "Name": "MC",
+        "DisplayName": "MailChimp"
+      },
+      "Config": {
+        "apiKey": "94f71917d8522770c97449b0c90caa4c-us20",
+        "audienceId": "df42a82d07",
+        "datacenterId": "us20"
+      },
+      "Enabled": true,
+      "Transformations": []
+    },
+    "message": {
+      "anonymousId": "userId12345",
+      "channel": "web",
+      "context": {
+        "app": {
+          "build": "1.0.0",
+          "name": "RudderLabs JavaScript SDK",
+          "namespace": "com.rudderlabs.javascript",
+          "version": "1.0.0"
+        },
+        "ip": "0.0.0.0",
+        "library": {
+          "name": "RudderLabs JavaScript SDK",
+          "version": "1.0.0"
+        },
+        "locale": "en-US",
+        "os": {
+          "name": "",
+          "version": ""
+        },
+        "screen": {
+          "density": 2
+        },
+        "traits": {
+          "anonymousId": "userId12345",
+          "firstName": "Bob",
+          "lastName": "Dole"
+        },
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
+      },
+      "integrations": {
+        "All": true
+      },
+      "messageId": "21e475b2-3694-477b-afb6-5b94a81aac21",
+      "originalTimestamp": "2019-11-15T10:22:32Z",
+      "receivedAt": "2019-11-15T15:52:37+05:30",
+      "request_ip": "[::1]:62921",
+      "sentAt": "2019-11-15T10:22:37Z",
+      "source_id": "1TdhTcwsUVOeEMWyPUpQIgF3pYr",
+      "timestamp": "2019-11-15T15:52:32+05:30",
+      "type": "identify",
+      "userId": "userId12345"
+    }
+  },
+  {
+    "destination": {
+      "ID": "1Tdi0lpXwSVwXG1lcdP2pXHKrJ6",
+      "Name": "test-mc",
+      "DestinationDefinition": {
+        "ID": "1SujZGrVEPqYmpUJcV4vSl9tfxn",
+        "Name": "MC",
+        "DisplayName": "MailChimp"
+      },
+      "Config": {
+        "audienceId": "df42a82d07",
+        "datacenterId": "us20"
+      },
+      "Enabled": true,
+      "Transformations": []
+    },
+    "message": {
+      "anonymousId": "userId12345",
+      "channel": "web",
+      "context": {
+        "app": {
+          "build": "1.0.0",
+          "name": "RudderLabs JavaScript SDK",
+          "namespace": "com.rudderlabs.javascript",
+          "version": "1.0.0"
+        },
+        "ip": "0.0.0.0",
+        "library": {
+          "name": "RudderLabs JavaScript SDK",
+          "version": "1.0.0"
+        },
+        "traits": {
+          "anonymousId": "userId12345",
+          "firstName": "Bob",
+          "lastName": "Dole"
+        },
+        "locale": "en-US",
+        "os": {
+          "name": "",
+          "version": ""
+        },
+        "screen": {
+          "density": 2
+        },
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
+      },
+      "integrations": {
+        "All": true,
+        "MailChimp":true
+      },
+      "messageId": "21e475b2-3694-477b-afb6-5b94a81aac21",
+      "originalTimestamp": "2019-11-15T10:22:32Z",
+      "receivedAt": "2019-11-15T15:52:37+05:30",
+      "request_ip": "[::1]:62921",
+      "sentAt": "2019-11-15T10:22:37Z",
+      "source_id": "1TdhTcwsUVOeEMWyPUpQIgF3pYr",
+      "timestamp": "2019-11-15T15:52:32+05:30",
+      "type": "identify"
+    }
   }
 ]
