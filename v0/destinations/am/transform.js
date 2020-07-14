@@ -12,7 +12,7 @@ const {
   defaultPostRequestConfig,
   defaultRequestConfig,
   getParsedIP
-} = require("../util");
+} = require("../../util");
 const {
   Event,
   ENDPOINT,

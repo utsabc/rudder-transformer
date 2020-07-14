@@ -9,7 +9,7 @@ const {
   defaultPostRequestConfig,
   defaultRequestConfig,
   defaultDeleteRequestConfig
-} = require("../util");
+} = require("../../util");
 
 let endPoint;
 
