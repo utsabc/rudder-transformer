@@ -1,0 +1,101 @@
+[
+    {
+        "message":{
+
+            "channel" :"web",
+            "context" :{ 
+
+                "traits": {
+                    "userId": "123456",
+                    "email" : "manashi@gmail.com",
+                    "address": {
+                        "Country": "india",
+                        "Gender" : "Male",
+                        "City": "kolkata",
+                        "State": "wb"
+                    },
+                    "Age" : "23"
+                },
+                "library": {
+                    "name": "RudderLabs JavaScript SDK",
+                    "version": "1.0.0"
+                  },
+                  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36",
+                  "locale": "en-US",
+                  "ip": "0.0.0.0",
+                  "os": {
+                    "name": "",
+                    "version": ""
+                  },
+                  "screen": {
+                    "density": 2
+                  }
+            },
+            "type": "identify", 
+            "messageId": "84e26acc-56a5-4835-8233-591137fca468",
+            "session_id": "3049dc4c-5a95-4ccd-a3e7-d74a7e411f22",
+            "originalTimestamp": "2019-10-14T09:03:17.562Z",
+            "anonymousId": "123456", 
+            "userId": "123456",
+            "integrations": {
+                "indicative": true,
+                "All":false
+            },
+            "sentAt": "2019-10-14T09:03:22.563Z"
+
+        },
+        "destination":{
+            "Config":{
+                "apiKey": "abcde"
+            }
+        }
+    },
+    {
+        "message":{
+
+            "channel":"web",
+            "context":{
+                "traits":{ 
+                    "userId":"123456",
+                    "email":"manashi@gmail.com"
+                },
+                "library": {
+                    "name": "RudderLabs JavaScript SDK",
+                    "version": "1.0.0"
+                  },
+                  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36",
+                  "locale": "en-US",
+                  "ip": "0.0.0.0",
+                  "os": {
+                    "name": "",
+                    "version": ""
+                  },
+                  "screen": {
+                    "density": 2
+                  }
+            },
+            "type":"track",
+            "messageId": "84e26acc-56a5-4835-8233-591137fca468", 
+            "session_id": "3049dc4c-5a95-4ccd-a3e7-d74a7e411f22",
+            "originalTimestamp": "2019-10-14T09:03:17.562Z", 
+            "event":"Registration", 
+            "userId":"123456",
+            "properties": {
+                "user_actual_role": "website_registartion",
+                "user_actual_id": 123456,
+                "user_time_spent": 50000
+              },
+            "integrations": {
+                "indicative": true,
+                "All":false
+            },
+            "sentAt": "2019-10-14T09:03:22.563Z"
+
+        },
+        "destination":{
+            "Config":{
+                "apiKey":"abcde" 
+            }
+        }
+    }
+]

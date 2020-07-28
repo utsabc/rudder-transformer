@@ -241,14 +241,21 @@ function processSingleMessage(message, destination) {
 function processProductListAction(message) {
   const eventList = [];
   const { products } = message.properties;
-
+  //console.log(process); function
   // Now construct complete payloads for each product and
   // get them processed through single message processing logic
-  products.forEach(product => {
+  // products.forEach(product => {
+  //   const productEvent = createSingleMessageBasicStructure(message);
+  //   productEvent.properties = product;
+  //   eventList.push(productEvent);
+  // });
+
+  for(let i=0;i<products.length;i++){
     const productEvent = createSingleMessageBasicStructure(message);
-    productEvent.properties = product;
+    console.log(`product event is : ${productEvent}`);
+    productEvent.properties = products[i];
     eventList.push(productEvent);
-  });
+  }
 
   return eventList;
 }
@@ -269,16 +276,19 @@ function processTransaction(message) {
 }
 
 function process(event) {
+  console.log(event);
   const respList = [];
   const { message, destination } = event;
   const messageType = message.type.toLowerCase();
-  const eventType = message.event ? message.event.toLowerCase() : undefined;
+  const eventType =  "product list viewed" ; //message.event ? message.event.toLowerCase() : undefined;
+  console.log(messageType,eventType,EventType.TRACK); // identify,undefined
   const toSendEvents = [];
   if (
     messageType === EventType.TRACK &&
     (eventType === Event.PRODUCT_LIST_VIEWED.name ||
       eventType === Event.PRODUCT_LIST_CLICKED)
   ) {
+    console.log('if inside block');
     toSendEvents.push(processProductListAction(message));
   } else if (
     messageType === EventType.TRACK &&
@@ -301,5 +311,4 @@ function process(event) {
   });
   return respList;
 }
-
-exports.process = process;
+//exports.process = process;
