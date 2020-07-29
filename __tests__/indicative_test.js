@@ -13,9 +13,9 @@ const outputDataFile = fs.readFileSync(
     path.resolve(__dirname, `./data/${integration}_output.json`)
 );
 const inputData = JSON.parse(inputDataFile);
-//const expectedData = JSON.parse(outputDataFile);
+const expectedData = JSON.parse(outputDataFile);
 
 for(let i=0;i<inputData.length;i++){
     const ouput=transformer.process(inputData[i]);
-    console.log(ouput);
+    console.log(JSON.stringify(ouput));
 }
