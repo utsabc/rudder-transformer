@@ -1,3 +1,5 @@
+const { getMappingConfig } = require("../util");
+
 const ConfigCategory = {
     IDENTIFY: {
       name: "IndicativeIdentifyConfig"
@@ -5,40 +7,22 @@ const ConfigCategory = {
     PAGE: {
       name: "IndicativePageConfig"
     },
-    SCREEN: {
-      name: "IndicativeScreenConfig"
-    },
     TRACK: {
         name : "IndicativeTrackConfig"
     },
     DEFAULT: {
-        name: "AmplitudeDefaultConfig"
-      }
-}
-const Event = {
-
-    REGISTRATION: {
-        name: "Registration",
-        category: ConfigCategory.TRACK
-      },
-    PRODUCT_LIST_VIEWED: {
-        name: "product list viewed",
-        category: ConfigCategory.TRACK
-      },
-
-    PRODUCT_LIST_CLICKED: {
-        name: "product list clicked",
-        category: ConfigCategory.TRACK
-      }
-    
-}
+        name: "IndicativeDefaultConfig"
+    }
+};
 const TRACK_ENDPOINT = "https://api.indicative.com/service/event";
 const IDENTIFY_ENDPOINT = "https://api.indicative.com/service/identify";
 
+const mappingConfig = getMappingConfig(ConfigCategory, __dirname);
+
 module.exports = {
-    Event,
     TRACK_ENDPOINT,
     IDENTIFY_ENDPOINT,
-    ConfigCategory
+    ConfigCategory,
+    mappingConfig
 };
   

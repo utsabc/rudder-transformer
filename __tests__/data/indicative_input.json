@@ -90,7 +90,7 @@
         "originalTimestamp": "2019-10-14T11:15:18.299Z",
         "anonymousId": "00000000000000000000000000",
         "userId": "12345",
-        "properties": {
+        "event_properties": {
           "path": "/test",
           "referrer": "Rudder",
           "search": "abc",
@@ -145,7 +145,7 @@
         "anonymousId": "00000000000000000000000000",
         "userId": "12345",
         "event": "test track event",
-        "properties": {
+        "event_properties": {
           "user_actual_role": "system_admin",
           "user_actual_id": 12345,
           "user_time_spent": 50000

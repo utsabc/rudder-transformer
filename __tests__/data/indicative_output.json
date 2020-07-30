@@ -1,123 +1,129 @@
-[{
-    "version": "1",
-    "type": "REST",
-    "method": "POST",
-    "endpoint": "https://api.indicative.com/2/identify",
-    "headers": {
-      "Content-Type": "application/json"
-    },
-    "uniqueId": "123456",
-    "body": {
-      "JSON": {
-        "apiKey": "abcde",
-        "properties": {
-          "user_properties": {
-            "city": "kolkata",
-            "country": "India",
-            "postalCode": 712136,
-            "state": "WB",
-            "street": "",
-            "anonymousId": "123456",
-            "email": "manashi@gmail.com",
-            "ip": "0.0.0.0",
-            "age": 26
+[
+  {
+      "output": {
+          "version": "1",
+          "type": "REST",
+          "method": "POST",
+          "endpoint": "https://api.indicative.com/service/identify",
+          "headers": {
+              "Content-Type": "application/json"
           },
-          "ip": "0.0.0.0",
-          "os_name": "",
-          "os_version": "",
-          "app_name": "RudderLabs JavaScript SDK",
-          "app_version": "1.0.0",
-          "language": "en-US",
-          "event_type": "$identify",
-          "time": 1571043797562,
-          "uniqueId": "123456",
-          "device_id": "123456",
-          "session_id": 991701108
-        }
+          "params": {},
+          "body": {
+              "JSON": {
+                  "apiKey": "abcde",
+                  "uniqueId": "123456",
+                  "properties": {
+                      "user_properties": {
+                          "city": "kolkata",
+                          "country": "India",
+                          "postalCode": 712136,
+                          "state": "WB",
+                          "street": "",
+                          "anonymousId": "123456",
+                          "email": "manashi@gmail.com",
+                          "ip": "0.0.0.0",
+                          "age": 26
+                      },
+                      "os_name": "",
+                      "os_version": "",
+                      "device_id": "123456",
+                      "app_name": "RudderLabs JavaScript SDK",
+                      "app_version": "1.0.0",
+                      "language": "en-US",
+                      "session_id": "3049dc4c-5a95-4ccd-a3e7-d74a7e411f22",
+                      "uniqueId": "123456",
+                      "time": 474802495
+                  }
+              },
+              "XML": {},
+              "FORM": {}
+          },
+          "files": {}
       },
-      "XML": {},
-      "FORM": {}
-    },
-    "params": {},
-    "files": {},
-    "statusCode": 200
+      "statusCode": 200
   },
   {
-    "version": "1",
-    "type": "REST",
-    "method": "POST",
-    "endpoint": "https://api.indicative.com/2/event",
-    "headers": {
-      "Content-Type": "application/json"
-    },
-    "uniqueId": "12345",
-    "body": {
-      "JSON": {
-        "apiKey": "abcde",
-        "eventName": "pageview",
-        "properties": {
-          "event_properties": {
-            "path": "/test",
-            "referrer": "Rudder",
-            "search": "abc",
-            "title": "Test Page",
-            "url": "www.rudderlabs.com"
+      "output": {
+          "version": "1",
+          "type": "REST",
+          "method": "POST",
+          "endpoint": "https://api.indicative.com/service/event",
+          "headers": {
+              "Content-Type": "application/json"
           },
-          "ip": "1.1.1.1",
-          "os_name": "",
-          "os_version": "",
-          "app_name": "RudderLabs JavaScript SDK",
-          "app_version": "1.0.0",
-          "language": "en-US",
-          "time": 1571051718299,
-          "device_id": "00000000000000000000000000",
-          "uniqueId": "12345",
-          "session_id": 991701108
-        }
+          "params": {},
+          "body": {
+              "JSON": {
+                  "apiKey": "abcde",
+                  "uniqueId": "12345",
+                  "eventName": "ApplicationLoaded",
+                  "eventUniqueId": 1027902619,
+                  "properties": {
+                      "event_properties": {
+                          "title": "Test Page",
+                          "path": "/test",
+                          "referrer": "Rudder",
+                          "search": "abc",
+                          "name": "ApplicationLoaded"
+                      },
+                      "os_name": "",
+                      "os_version": "",
+                      "device_id": "00000000000000000000000000",
+                      "app_name": "RudderLabs JavaScript SDK",
+                      "app_version": "1.0.0",
+                      "language": "en-US",
+                      "session_id": "3049dc4c-5a95-4ccd-a3e7-d74a7e411f22",
+                      "ip": "1.1.1.1",
+                      "uniqueId": "12345",
+                      "time": 1288779511
+                  }
+              },
+              "XML": {},
+              "FORM": {}
+          },
+          "files": {}
       },
-      "XML": {},
-      "FORM": {}
-    },
-    "params": {},
-    "files": {},
-    "statusCode": 200
+      "statusCode": 200
   },
   {
-    "version": "1",
-    "type": "REST",
-    "method": "POST",
-    "endpoint": "https://api.indicative.com/2/event",
-    "headers": {
-      "Content-Type": "application/json"
-    },
-    "uniqueId": "12345",
-    "body": {
-      "JSON": {
-        "apiKey": "abcde",
-        "uniqueId": "12345",
-        "properties": {
-          "event_properties": {
-            "user_actual_role": "system_admin",
-            "user_actual_id": 12345,
-            "user_time_spent": 50000
+      "output": {
+          "version": "1",
+          "type": "REST",
+          "method": "POST",
+          "endpoint": "https://api.indicative.com/service/event",
+          "headers": {
+              "Content-Type": "application/json"
           },
-          "ip": "0.0.0.0",
-          "os_name": "",
-          "os_version": "",
-          "app_name": "RudderLabs JavaScript SDK",
-          "app_version": "1.0.0",
-          "language": "en-US",
-          "eventName": "test track event",
-          "time": 1571051718300,
-          "device_id": "00000000000000000000000000",
-          "uniqueId": "12345",
-          "session_id": 991701108
-        }
+          "params": {},
+          "body": {
+              "JSON": {
+                  "apiKey": "abcde",
+                  "uniqueId": "12345",
+                  "eventName": "test track event",
+                  "eventUniqueId": 926670166,
+                  "properties": {
+                      "event_properties": {
+                          "event_type": "system_admin",
+                          "uniqueId": 12345,
+                          "time_spent": 50000
+                      },
+                      "os_name": "",
+                      "os_version": "",
+                      "device_id": "00000000000000000000000000",
+                      "app_name": "RudderLabs JavaScript SDK",
+                      "app_version": "1.0.0",
+                      "language": "en-US",
+                      "session_id": "3049dc4c-5a95-4ccd-a3e7-d74a7e411f22",
+                      "uniqueId": "12345",
+                      "time": 1288758648
+                  }
+              },
+              "XML": {},
+              "FORM": {}
+          },
+          "files": {}
       },
-      "XML": {},
-      "FORM": {}
-    },
-    "params": {},
-    "files": {},
-    "statusCode": 200
-  }]
+      "statusCode": 200
+  }
+]

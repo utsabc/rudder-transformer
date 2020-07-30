@@ -97,14 +97,14 @@ function responseBuilderSimple(
     set(rawPayload,"device_brand",message.context.device.manufacturer);
   }
   
-
+  console.log(mappingJson);
   const sourceKeys = Object.keys(mappingJson);
   sourceKeys.forEach(sourceKey => {
     set(rawPayload, mappingJson[sourceKey], get(message, sourceKey));
   });
 
   const endpoint = ENDPOINT; // evType === EventType.IDENTIFY ? IDENTIFY_ENDPOINT : ENDPOINT; // identify on same endpoint also works
-
+  
   // in case of identify, populate user_properties from traits as well, don't need to send evType
   if (evType === EventType.IDENTIFY) {
     populateSpecedTraits(rawPayload, message);
@@ -122,7 +122,7 @@ function responseBuilderSimple(
   } else {
     rawPayload.event_type = evType;
   }
-
+  return rawPayload;
   rawPayload.time = new Date(message.originalTimestamp).getTime();
   // send user_id only when present, for anonymous users not required
   if (
@@ -241,21 +241,14 @@ function processSingleMessage(message, destination) {
 function processProductListAction(message) {
   const eventList = [];
   const { products } = message.properties;
-  //console.log(process); function
+
   // Now construct complete payloads for each product and
   // get them processed through single message processing logic
-  // products.forEach(product => {
-  //   const productEvent = createSingleMessageBasicStructure(message);
-  //   productEvent.properties = product;
-  //   eventList.push(productEvent);
-  // });
-
-  for(let i=0;i<products.length;i++){
+  products.forEach(product => {
     const productEvent = createSingleMessageBasicStructure(message);
-    console.log(`product event is : ${productEvent}`);
-    productEvent.properties = products[i];
+    productEvent.properties = product;
     eventList.push(productEvent);
-  }
+  });
 
   return eventList;
 }
@@ -276,19 +269,16 @@ function processTransaction(message) {
 }
 
 function process(event) {
-  console.log(event);
   const respList = [];
   const { message, destination } = event;
   const messageType = message.type.toLowerCase();
-  const eventType =  "product list viewed" ; //message.event ? message.event.toLowerCase() : undefined;
-  console.log(messageType,eventType,EventType.TRACK); // identify,undefined
+  const eventType = message.event ? message.event.toLowerCase() : undefined;
   const toSendEvents = [];
   if (
     messageType === EventType.TRACK &&
     (eventType === Event.PRODUCT_LIST_VIEWED.name ||
       eventType === Event.PRODUCT_LIST_CLICKED)
   ) {
-    console.log('if inside block');
     toSendEvents.push(processProductListAction(message));
   } else if (
     messageType === EventType.TRACK &&
@@ -311,4 +301,5 @@ function process(event) {
   });
   return respList;
 }
-//exports.process = process;
+
+exports.process = process;
