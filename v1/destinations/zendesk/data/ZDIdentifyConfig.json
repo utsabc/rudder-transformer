@@ -2,40 +2,41 @@
     {
         "destKey": "user.email",
         "sourceKeys": [
-            "context.traits.email",
-            "traits.email"
+            "traits.email",
+            "context.traits.email"
         ],
         "required": false
     },
     {
         "destKey": "user.name",
         "sourceKeys": [
-            "context.traits.name",
-            "traits.name"
+            "traits.name",
+            "context.traits.name"
         ],
         "required": false
     },
     {
         "destKey": "user.organization_id",
         "sourceKeys": [
-            "context.traits.organizationId",
-            "traits.organizationId"
+            "traits.organizationId",
+            "context.traits.organizationId"
+            
         ],
         "required": false
     },
     {
         "destKey": "user.time_zone",
         "sourceKeys": [
-            "context.traits.timezone",
-            "traits.timezone"
+            "traits.timezone",
+            "context.traits.timezone"
         ],
         "required": false
     },
     {
         "destKey": "user.phone",
         "sourceKeys": [
-            "context.traits.phone",
-            "traits.phone"
+            "traits.phone",
+            "context.traits.phone"
         ],
         "required": false
     },
