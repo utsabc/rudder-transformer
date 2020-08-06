@@ -20,7 +20,6 @@
         "sourceKeys": [
             "traits.organizationId",
             "context.traits.organizationId"
-            
         ],
         "required": false
     },
@@ -42,9 +41,7 @@
     },
     {
         "destKey": "user.external_id",
-        "sourceKeys": [
-            "userId"
-        ],
+        "sourceKeys": "userId",
         "required": false
     }
 ]
