@@ -231,6 +231,12 @@ const defaultPutRequestConfig = {
   requestMethod: "PUT"
 };
 
+//PATCH
+const defaultPatchRequestConfig = {
+  requestFormat: "JSON",
+  requestMethod: "PATCH"
+};
+
 // DEFAULT
 const defaultRequestConfig = () => {
   return {
@@ -714,6 +720,7 @@ module.exports = {
   defaultBatchRequestConfig,
   defaultDeleteRequestConfig,
   defaultGetRequestConfig,
+  defaultPatchRequestConfig,
   defaultPostRequestConfig,
   defaultPutRequestConfig,
   defaultRequestConfig,
