@@ -3,6 +3,9 @@ const set = require("set-value");
 const {
   defaultPostRequestConfig,
   defaultGetRequestConfig,
+  defaultPutRequestConfig,
+  defaultPatchRequestConfig,
+  defaultDeleteRequestConfig,
   defaultRequestConfig,
   getHashFromArray,
   getFieldValueFromMessage,
@@ -34,6 +37,24 @@ function process(event) {
         response.method = defaultGetRequestConfig.requestMethod;
         // send properties as query params for GET
         response.params = getPropertyParams(message);
+      } else if (method === defaultPutRequestConfig.requestMethod) {
+        response.method = defaultPutRequestConfig.requestMethod;
+        response.body.JSON = message;
+        response.headers = {
+          "Content-Type": "application/json"
+        };
+      } else if (method === defaultPatchRequestConfig.requestMethod) {
+        response.method = defaultPatchRequestConfig.requestMethod;
+        response.body.JSON = message;
+        response.headers = {
+          "Content-Type": "application/json"
+        };
+      } else if (method === defaultDeleteRequestConfig.requestMethod) {
+        response.method = defaultDeleteRequestConfig.requestMethod;
+        response.body.JSON = message;
+        response.headers = {
+          "Content-Type": "application/json"
+        };
       } else {
         response.method = defaultPostRequestConfig.requestMethod;
         response.body.JSON = message;
