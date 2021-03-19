@@ -1,67 +1,47 @@
-const parser = require("fast-xml-parser");
-const he = require("he");
 const { axios } = require("axios");
-const { EventType } = require("../../../constants");
+// const { EventType } = require("../../../constants");
 const { identifyConfig, BASE_URL } = require("./config");
 const {
   defaultRequestConfig,
   constructPayload,
-  defaultPostRequestConfig,
-  getFieldValueFromMessage
+  defaultPostRequestConfig
 } = require("../../util");
 
-const options = {
-  attributeNamePrefix: "@_",
-  attrNodeName: "attr",
-  textNodeName: "#text",
-  ignoreAttributes: true,
-  ignoreNameSpace: false,
-  allowBooleanAttributes: false,
-  parseNodeValue: true,
-  parseAttributeValue: false,
-  trimValues: true,
-  cdataTagName: "__cdata",
-  cdataPositionChar: "\\c",
-  parseTrueNumberOnly: false,
-  arrayMode: false, // "strict"
-  attrValueProcessor: (val, attrName) =>
-    he.decode(val, { isAttributeValue: true }),
-  tagValueProcessor: (val, tagName) => he.decode(val),
-  stopNodes: ["parse-me-as-string"]
-};
-
-const responseBuilderSimple = (payload, destination) => {
-  const responseBody = { ...payload, apiKey: destination.Config.apiKey };
+const responseBuilderSimple = (payload, destination, accessToken) => {
+  const { businessUnitId } = destination.Config;
+  const responseBody = { ...payload };
   const response = defaultRequestConfig();
-  response.endpoint = `${destination.Config.apiUrl}${BASE_URL}`;
+  response.endpoint = `${BASE_URL}${identifyConfig.endpoint}`;
   response.method = defaultPostRequestConfig.requestMethod;
-  response.body.JSON = responseBody;
+  response.headers = {
+    "Content-Type": "application/x-www-form-urlencoded",
+    Authorization: `Bearer ${accessToken}`,
+    "Pardot-Business-Unit-Id": businessUnitId
+  };
+  response.body.FORM = responseBody;
   return response;
-
-  // fail-safety for developer error
-  // throw new Error("Payload could not be constructed");
 };
 
 // Consider only Identify call for Pardot for now
 
 const getAccessToken = async destination => {
-  const { pardotAccountEmail, pardotAccountPassword } = destination.Config;
+  const {
+    pardotAccountEmail,
+    pardotAccountPassword,
+    salesforceSecurityToken
+  } = destination.Config;
 
   const authResponse = await axios.post(
-    "https://pi.pardot.com//api/login/version/4",
+    "https://login.salesforce.com//api/login/version/4",
     {
       username: pardotAccountEmail,
-      password: pardotAccountPassword,
+      password: `${pardotAccountPassword}${salesforceSecurityToken}`,
       clientId: "",
       clientSecret: "",
       grantType: "password"
     }
   );
-  if (parser.validate(authResponse) === true) {
-    const authResponseJson = parser.parse(authResponse, options);
-    return authResponseJson.access_token;
-  }
-  return null;
+  return authResponse.access_token;
 };
 
 const processIdentify = (message, destination) => {
@@ -69,9 +49,8 @@ const processIdentify = (message, destination) => {
   if (!accessToken) {
     throw new Error(" authentication fail");
   }
-  const traits = getFieldValueFromMessage(message, "traits");
-  const prospectObject = constructPayload(traits, identifyConfig);
-  return responseBuilderSimple(prospectObject, destination);
+  const prospectObject = constructPayload(message, identifyConfig.name);
+  return responseBuilderSimple(prospectObject, destination, accessToken);
 };
 
 const processEvent = (message, destination) => {
