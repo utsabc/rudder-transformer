@@ -1,0 +1,484 @@
+[
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "error": "Message Type is not present. Aborting message."
+  },
+  {
+    "error": "Missing required value from [\"traits.email\",\"context.traits.email\",\"properties.email\"]"
+  },
+  {
+    "error": "Missing required value from [\"traits.email\",\"context.traits.email\",\"properties.email\"]"
+  },
+  {
+    "error": "Missing required value from [\"traits.email\",\"context.traits.email\",\"properties.email\"]"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1" 
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "error": "Missing required value from [\"properties.domain\",\"properties.url\",\"context.page.url\"]"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "contact": {
+          "email": "sayan@gmail.com",
+          "firstName": null,
+          "lastName": null
+        }
+      },
+      "XML": {}
+    },
+    "endpoint": "https://active.campaigns.rudder.com/api/3/contact/sync",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "body": {
+      "FORM": {
+        "actid": "476550467",
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "event": "Rudder_Event_Track_Test",
+        "eventdata": "Rudder_Event_Track_Test",
+        "key": "f8a866fddc721350fdc2fbbd2e5c43a6dddaaa03",
+        "visit": "%7Bemail%20%3A%20jamesDoe%40gmail.com%7D"
+      },
+      "JSON": {},
+      "XML": {}
+    },
+    "endpoint": "https://trackcmp.net/event",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {
+        "actid": "476550467",
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "event": "Tracking Action",
+        "key": "f8a866fddc721350fdc2fbbd2e5c43a6dddaaa03",
+        "visit": "%7Bemail%20%3A%20jamesDoe%40gmail.com%7D"
+      },
+      "JSON": {},
+      "XML": {}
+    },
+    "endpoint": "https://trackcmp.net/event",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {
+        "actid": "476550467",
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "event": "Tracking Action",
+        "eventdata": "Rudder_Event_Track_Test",
+        "key": "f8a866fddc721350fdc2fbbd2e5c43a6dddaaa03",
+        "visit": "%7Bemail%20%3A%20jamesDoe%40gmail.com%7D"
+      },
+      "JSON": {},
+      "XML": {}
+    },
+    "endpoint": "https://trackcmp.net/event",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {
+        "actid": "476550467",
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "event": "Tracking Action",
+        "eventdata": "Rudder_Event_Track_Test",
+        "key": "f8a866fddc721350fdc2fbbd2e5c43a6dddaaa03",
+        "visit": "%7Bemail%20%3A%20jamesDoe%40gmail.com%7D"
+      },
+      "JSON": {},
+      "XML": {}
+    },
+    "endpoint": "https://trackcmp.net/event",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {
+        "actid": "476550467",
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "event": "Tracking Action",
+        "eventdata": "Rudder_Event_Track_Test",
+        "key": "f8a866fddc721350fdc2fbbd2e5c43a6dddaaa03",
+        "visit": "%7Bemail%20%3A%20jamesDoe%40gmail.com%7D"
+      },
+      "JSON": {},
+      "XML": {}
+    },
+    "endpoint": "https://trackcmp.net/event",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {
+        "actid": "476550467",
+        "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+        "event": "Tracking Action",
+        "eventdata": "Rudder_Event_Track_Test",
+        "key": "f8a866fddc721350fdc2fbbd2e5c43a6dddaaa03",
+        "visit": "%7Bemail%20%3A%20jamesDoe%40gmail.com%7D"
+      },
+      "JSON": {},
+      "XML": {}
+    },
+    "endpoint": "https://trackcmp.net/event",
+    "files": {},
+    "headers": {
+      "Api-Token": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  }
+]

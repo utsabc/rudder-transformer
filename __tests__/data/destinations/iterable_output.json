@@ -1,0 +1,692 @@
+[
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "ip": "0.0.0.0"
+        },
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "error": "Invalid page call"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "dataFields": {
+          "address": {
+            "city": "kolkata",
+            "country": "India",
+            "postalCode": 712136,
+            "state": "WB",
+            "street": ""
+          },
+          "age": 26,
+          "anonymousId": "123456",
+          "email": "sayan@gmail.com",
+          "ip": "0.0.0.0"
+        },
+        "email": "sayan@gmail.com",
+        "mergeNestedObjects": true,
+        "preferUserId": true,
+        "userId": "123456"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/users/update",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "createdAt": 1567352811693,
+        "dataFields": {
+          "name": "Rudder_Event_Track_Test"
+        },
+        "email": "jamesDoe@gmail.com",
+        "userId": "test_user_id"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/events/track",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "createdAt": 1567352811693,
+        "email": "jamesDoe@gmail.com",
+        "eventName": "Tracking Action",
+        "userId": "test_user_id"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/events/track",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "createdAt": 1567352811693,
+        "dataFields": {
+          "name": "Rudder_Event_Track_Test"
+        },
+        "email": "jamesDoe@gmail.com",
+        "eventName": "Tracking Action",
+        "userId": "test_user_id"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/events/track",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "createdAt": 1567352811693,
+        "dataFields": {
+          "name": "Rudder_Event_Track_Test"
+        },
+        "email": "jamesDoe@gmail.com",
+        "eventName": "Tracking Action",
+        "userId": "test_user_id"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/events/track",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "createdAt": 1567352811693,
+        "dataFields": {
+          "name": "Rudder_Event_Track_Test"
+        },
+        "email": "jamesDoe@gmail.com",
+        "eventName": "Tracking Action",
+        "userId": "test_user_id"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/events/track",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "createdAt": 1567352811693,
+        "dataFields": {
+          "name": "Rudder_Event_Track_Test"
+        },
+        "email": "jamesDoe@gmail.com",
+        "eventName": "Tracking Action",
+        "userId": "test_user_id"
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.iterable.com/api/events/track",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "api_key": "62d12498c37c4fd8a1a546c2d35c2f60"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  }
+]

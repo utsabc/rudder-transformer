@@ -1,0 +1,114 @@
+{
+  "active_campaign": {
+    "Config": {
+      "apiKey": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "apiUrl": "https://active.campaigns.rudder.com",
+      "actid": "476550467",
+      "eventKey": "f8a866fddc721350fdc2fbbd2e5c43a6dddaaa03"
+    }
+  },
+  "adj": {
+    "Config": {
+      "appToken": "t1yurrb968zk",
+      "customMappings": [
+        {
+          "from": "Application Installed",
+          "to": "3fdmll"
+        },
+        {
+          "from": "First Investment",
+          "to": "tf4gm5"
+        }
+      ],
+      "environment": true
+    }
+  },
+  "af": {
+    "Config": {
+      "devKey": "ef1d42390426e3f7c90ac78272e74344",
+      "androidAppId": "com.rudderlabs.javascript",
+      "appleAppId": "123456789"
+    }
+  },
+  "am": {
+    "Config": {
+      "apiKey": "abcde"
+    }
+  },
+  "appcues": [{}],
+  "autopilot": [{}],
+  "azure_blob": [{}],
+  "azure_event_hub": [{}],
+  "bq": [{}],
+  "branch": [{}],
+  "braze": [{}],
+  "clevertap": {
+    "Config": {
+      "passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1",
+      "accountId": "476550467",
+      "trackAnonymous": true
+    }
+  },
+  "clickhouse": [{}],
+  "confluent_cloud": [{}],
+  "customerio": {
+    "Config": {
+      "datacenterEU": false,
+      "siteID": "46be54768e7d49ab2628",
+      "apiKey": "19f0f734e3bb87a44596"
+    }
+  },
+  "digital_ocean_spaces": [{}],
+  "eventbridge": [{}],
+  "facebook_pixel": [{}],
+  "fb": [{}],
+  "fbpixel": [{}],
+  "firehose": [{}],
+  "ga": [{}],
+  "ga360": [{}],
+  "gcs": [{}],
+  "googlepubsub": [{}],
+  "heap": [{}],
+  "hs": [{}],
+  "indicative": [{}],
+  "intercom": [{}],
+  "iterable": {
+    "Config": {
+      "apiKey": "62d12498c37c4fd8a1a546c2d35c2f60",
+      "mapToSingleEvent": false,
+      "trackAllPages": false,
+      "trackCategorisedPages": true,
+      "trackNamedPages": false
+    },
+    "Enabled": true
+  },
+  "kafka": [{}],
+  "keen": [{}],
+  "kinesis": [{}],
+  "kissmetrics": [{}],
+  "klaviyo": [{}],
+  "kochava": [{}],
+  "kustomer": [{}],
+  "leanplum": [{}],
+  "lytics": [{}],
+  "mailchimp": [{}],
+  "marketo": [{}],
+  "minio": [{}],
+  "moengage": [{}],
+  "monetate": [{}],
+  "mp": [{}],
+  "personalize": [{}],
+  "postgres": [{}],
+  "posthog": [{}],
+  "redis": [{}],
+  "rs": [{}],
+  "s3": [{}],
+  "salesforce": [{}],
+  "segment": [{}],
+  "sfmc": [{}],
+  "slack": [{}],
+  "snowflake": [{}],
+  "userlist": [{}],
+  "webhook": [{}],
+  "zendesk": [{}]
+}

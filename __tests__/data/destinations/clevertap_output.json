@@ -1,0 +1,760 @@
+[
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": null,
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "error": "Message Type is not present. Aborting message."
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {},
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {},
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "evtData": {
+              "name": "ApplicationLoaded"
+            },
+            "evtName": "Web Page Viewed: ApplicationLoaded",
+            "identity": "12345",
+            "type": "event"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "identity": "123456",
+            "profileData": {
+              "Email": "sayan@gmail.com",
+              "address": {
+                "city": "kolkata",
+                "country": "India",
+                "postalCode": 712136,
+                "state": "WB",
+                "street": ""
+              },
+              "age": 26,
+              "ip": "0.0.0.0"
+            },
+            "type": "profile"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "error": "Message type not supported"
+  },
+  {
+    "error": "Missing required value from \"event\""
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "evtData": {},
+            "evtName": "Tracking Action",
+            "identity": "test_user_id",
+            "type": "event"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "evtData": {
+              "name": "Rudder_Event_Track_Test"
+            },
+            "evtName": "Tracking Action",
+            "identity": "test_user_id",
+            "type": "event"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "evtData": {
+              "name": "Rudder_Event_Track_Test"
+            },
+            "evtName": "Tracking Action",
+            "identity": "test_user_id",
+            "type": "event"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "evtData": {
+              "name": "Rudder_Event_Track_Test"
+            },
+            "evtName": "Tracking Action",
+            "identity": "test_user_id",
+            "type": "event"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  },
+  {
+    "body": {
+      "FORM": {},
+      "JSON": {
+        "d": [
+          {
+            "evtData": {
+              "name": "Rudder_Event_Track_Test"
+            },
+            "evtName": "Tracking Action",
+            "identity": "test_user_id",
+            "type": "event"
+          }
+        ]
+      },
+      "XML": {}
+    },
+    "endpoint": "https://api.clevertap.com/1/upload",
+    "files": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "X-CleverTap-Account-Id": "476550467",
+      "X-CleverTap-Passcode": "fbee74a147828e2932c701d19dc1f2dcfa4ac0048be3aa3a88d427090a59dc1c0fa002f1"
+    },
+    "method": "POST",
+    "params": {},
+    "type": "REST",
+    "version": "1"
+  }
+]
