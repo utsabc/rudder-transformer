@@ -310,7 +310,8 @@ function responseBuilderSimple(
         message.userId &&
         message.userId !== "" &&
         message.userId !== "null" &&
-        message.userId !== null
+        message.userId !== null &&
+        message.userId !== undefined
       ) {
         payload.user_id = message.userId;
       }
@@ -328,6 +329,8 @@ function responseBuilderSimple(
       response.headers = {
         "Content-Type": "application/json"
       };
+      if (message.anonymousId === undefined || message.anonymousId === null)
+        throw new Error("anonymousId is not set.");
       response.userId = message.anonymousId;
       response.body.JSON = {
         api_key: destination.Config.apiKey,
@@ -342,6 +345,8 @@ function responseBuilderSimple(
         groupResponse.method = defaultPostRequestConfig.requestMethod;
         groupResponse.endpoint = GROUP_ENDPOINT;
         let groupPayload = Object.assign(groupInfo);
+        if (message.anonymousId === undefined || message.anonymousId === null)
+          throw new Error("anonymousId is not set.");
         groupResponse.userId = message.anonymousId;
         groupPayload = removeUndefinedValues(groupPayload);
         groupResponse.body.FORM = {
@@ -369,7 +374,7 @@ function processSingleMessage(message, destination) {
   let groupInfo = get(message, "integrations.Amplitude.groups") || undefined;
   let category = ConfigCategory.DEFAULT;
 
-  const messageType = message.type.toLowerCase();
+  const messageType = message.type ? message.type.toLowerCase() : "n/a";
   switch (messageType) {
     case EventType.IDENTIFY:
       payloadObjectName = "events"; // identify same as events
@@ -528,6 +533,7 @@ function trackRevenueEvent(message, destination) {
     // when the user enables both trackProductsOnce and trackRevenuePerProduct, we will track revenue on each product level.
     // So, if trackProductsOnce is true and there is no products array in payload, we will track the revenue of original event.
     // when trackRevenuePerProduct is false, track the revenue of original event - that is handled in next if block.
+    // eslint-disable-next-line no-lonely-if
     if (!isProductArrayInPayload(message)) {
       originalEvent.isRevenue = true;
     }
@@ -557,7 +563,7 @@ function trackRevenueEvent(message, destination) {
 function process(event) {
   const respList = [];
   const { message, destination } = event;
-  const messageType = message.type.toLowerCase();
+  const messageType = message.type ? message.type.toLowerCase() : "n/a";
   const toSendEvents = [];
   if (messageType === EventType.TRACK) {
     if (message.properties && message.properties.revenue) {
@@ -568,6 +574,8 @@ function process(event) {
     } else {
       toSendEvents.push(message);
     }
+  } else if (messageType === "n/a") {
+    throw new Error("message type not supported");
   } else {
     toSendEvents.push(message);
   }

@@ -25,7 +25,7 @@ function responseBuilderSimple(payload, message, destination) {
     endpoint = `${ENDPOINT}${androidAppId}`;
   } else if (appleAppId) {
     endpoint = `${ENDPOINT}id${appleAppId}`;
-  } else if (message.context.app.namespace) {
+  } else if (get(message, "context.app.namespace")) {
     endpoint = `${ENDPOINT}${message.context.app.namespace}`;
   } else {
     throw new Error("Invalid app endpoint");
@@ -118,6 +118,9 @@ function processNonTrackEvents(message, destination, eventName) {
 function processEventTypeTrack(message) {
   let isMultiSupport = true;
   let isUnIdentifiedEvent = false;
+  if (message.event === undefined) {
+    throw new Error('Missing required value "event"');
+  }
   const evType = message.event.toLowerCase();
   let category = ConfigCategory.DEFAULT;
   const eventName = evType.toLowerCase();
@@ -155,7 +158,7 @@ function processEventTypeTrack(message) {
 }
 
 function processSingleMessage(message, destination) {
-  const messageType = message.type.toLowerCase();
+  const messageType = message.type ? message.type.toLowerCase() : "n/a";
   let payload;
   switch (messageType) {
     case EventType.TRACK: {
@@ -179,7 +182,7 @@ function processSingleMessage(message, destination) {
 }
 
 function process(event) {
-  const response = processSingleMessage(event.message, event.destination); 
+  const response = processSingleMessage(event.message, event.destination);
   return response;
 }
 

@@ -5,6 +5,7 @@ const axios = require("axios");
 const { EventType } = require("../../../constants");
 const { CONFIG_CATEGORIES, MAPPING_CONFIG } = require("./config");
 const {
+  removeUndefinedValues,
   defaultRequestConfig,
   getFieldValueFromMessage,
   constructPayload,
@@ -28,7 +29,7 @@ const responseBuilderSimple = (payload, category, destination) => {
           "Content-Type": "application/json",
           "Api-Token": destination.Config.apiKey
         };
-        response.body.JSON = responseBody;
+        response.body.JSON = removeUndefinedValues(responseBody);
         break;
       case "ACScreen":
       case "ACTrack":
@@ -38,7 +39,7 @@ const responseBuilderSimple = (payload, category, destination) => {
           "Content-Type": "application/x-www-form-urlencoded",
           "Api-Token": destination.Config.apiKey
         };
-        response.body.FORM = responseBody;
+        response.body.FORM = removeUndefinedValues(responseBody);
         break;
       default:
         throw new Error("Message format type not supported");
@@ -86,8 +87,8 @@ const customTagProcessor = async (message, category, destination) => {
   const createdContact = res.data.contact;
 
   // Here we extract the tags which are to be mapped to the created contact from the message
-  const tags = get(message.context.traits, "tags")
-    ? get(message.context.traits, "tags")
+  const tags = get(message, "context.traits.tags")
+    ? get(message, "context.traits.tags")
     : get(message.traits, "tags");
 
   // If no tags are sent in message return the contact from the method
@@ -205,8 +206,8 @@ const customFieldProcessor = async (
   let res;
   // Step - 1
   // Extract the custom field info from the message
-  const fieldInfo = get(message.context.traits, "fieldInfo")
-    ? get(message.context.traits, "fieldInfo")
+  const fieldInfo = get(message, "context.traits.fieldInfo")
+    ? get(message, "context.traits.fieldInfo")
     : get(message.traits, "fieldInfo");
 
   // If no field info is passed return from method
@@ -298,8 +299,8 @@ const customListProcessor = async (
   createdContact
 ) => {
   // Here we extract the list info from the message
-  const listInfo = get(message.context.traits, "lists")
-    ? get(message.context.traits, "lists")
+  const listInfo = get(message, "context.traits.lists")
+    ? get(message, "context.traits.lists")
     : get(message.traits, "lists");
   if (!listInfo) {
     return;
@@ -430,16 +431,17 @@ const screenRequestHandler = async (message, category, destination) => {
   // Mapping the Event payloads
   // Create the payload and send the ent to end point using rudder server
   // Ref - https://developers.activecampaign.com/reference#track-event
+  const email = get(message, "context.traits.email")
+    ? get(message, "context.traits.email")
+    : get(message, "context.traits.traits.email");
   const payload = constructPayload(message, MAPPING_CONFIG[category.name]);
   payload.actid = destination.Config.actid;
   payload.key = destination.Config.eventKey;
-  payload.visit = encodeURIComponent(
-    `{email : ${
-      message.context.traits.email
-        ? message.context.traits.email
-        : message.context.traits.traits.email
-    }}`
-  );
+  if (email) {
+    payload.visit = encodeURIComponent(`{email : ${email}}`);
+  } else {
+    throw new Error('Missing required value from ["context.traits.email"]');
+  }
   return responseBuilderSimple(payload, category, destination);
 };
 
@@ -496,16 +498,17 @@ const trackRequestHandler = async (message, category, destination) => {
   // Mapping the Event payloads
   // Create the payload and send the ent to end point using rudder server
   // Ref - https://developers.activecampaign.com/reference#track-event
+  const email = get(message, "context.traits.email")
+    ? get(message, "context.traits.email")
+    : get(message, "context.traits.traits.email");
   const payload = constructPayload(message, MAPPING_CONFIG[category.name]);
   payload.actid = destination.Config.actid;
   payload.key = destination.Config.eventKey;
-  payload.visit = encodeURIComponent(
-    `{email : ${
-      message.context.traits.email
-        ? message.context.traits.email
-        : message.context.traits.traits.email
-    }}`
-  );
+  if (email) {
+    payload.visit = encodeURIComponent(`{email : ${email}}`);
+  } else {
+    throw new Error('Missing required value from ["context.traits.email"]');
+  }
   return responseBuilderSimple(payload, category, destination);
 };
 

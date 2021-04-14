@@ -20,7 +20,7 @@ const {
   DEVICE_REGISTER_ENDPOINT,
   DEVICE_DELETE_ENDPOINT
 } = require("./config");
-const logger = require("../../../logger");
+// const logger = require("../../../logger");
 
 const deviceRelatedEventNames = [
   "Application Installed",
@@ -196,7 +196,7 @@ function responseBuilder(message, evType, evName, destination) {
 }
 
 function processSingleMessage(message, destination) {
-  const messageType = message.type.toLowerCase();
+  const messageType = message.type ? message.type.toLowerCase() : "n/a";
   let evType;
   let evName;
   switch (messageType) {
@@ -216,7 +216,7 @@ function processSingleMessage(message, destination) {
       evName = message.event;
       break;
     default:
-      logger.error(`could not determine type ${messageType}`);
+      // logger.error(`could not determine type ${messageType}`);
       throw new Error(`could not determine type ${messageType}`);
   }
   const response = responseBuilder(message, evType, evName, destination);

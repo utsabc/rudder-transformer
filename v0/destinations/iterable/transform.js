@@ -1,3 +1,4 @@
+const get = require("get-value");
 const { EventType } = require("../../../constants");
 const { ConfigCategory, mappingConfig } = require("./config");
 const {
@@ -15,6 +16,7 @@ function validateMandatoryField(payload) {
 }
 
 function constructPayloadItem(message, category, destination) {
+  const deviceType = get(message, "context.device.type");
   const rawPayloadItemArr = [];
   let rawPayload = {};
 
@@ -29,7 +31,8 @@ function constructPayloadItem(message, category, destination) {
         mappingConfig[ConfigCategory.DEVICE.name]
       );
       rawPayload.preferUserId = true;
-      if (message.context.device.type.toLowerCase() === "ios") {
+      if (deviceType === undefined) throw new Error("Device type not found.");
+      if (deviceType.toLowerCase() === "ios") {
         rawPayload.device.platform = "APNS";
       } else {
         rawPayload.device.platform = "GCM";
@@ -228,7 +231,7 @@ function responseBuilderSimpleForIdentify(message, category, destination) {
 }
 
 function processSingleMessage(message, destination) {
-  const messageType = message.type.toLowerCase();
+  const messageType = message.type ? message.type.toLowerCase() : "n/a";
   let category = {};
   let event;
   switch (messageType) {
@@ -242,7 +245,7 @@ function processSingleMessage(message, destination) {
       category = ConfigCategory.SCREEN;
       break;
     case EventType.TRACK:
-      event = message.event.toLowerCase();
+      event = message.event ? message.event.toLowerCase() : "";
       switch (event) {
         case "order completed":
           category = ConfigCategory.TRACK_PURCHASE;
@@ -262,9 +265,9 @@ function processSingleMessage(message, destination) {
 
   if (
     (message.type === EventType.IDENTIFY &&
-      message.context.device &&
-      message.context.device.token) ||
-    (message.context.os && message.context.os.token)
+      get(message, "context.device") &&
+      get(message, "context.device.token")) ||
+    (get(message, "context.os") && get(message, "context.os.token"))
   ) {
     return [
       response,

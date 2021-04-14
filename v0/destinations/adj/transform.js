@@ -1,3 +1,4 @@
+const get = require("get-value");
 const { EventType } = require("../../../constants");
 const { CONFIG_CATEGORIES, MAPPING_CONFIG, baseEndpoint } = require("./config");
 const {
@@ -14,17 +15,15 @@ const rejectParams = ["revenue", "currency"];
 function responseBuilderSimple(message, category, destination) {
   const payload = constructPayload(message, MAPPING_CONFIG[category.name]);
   const { appToken, customMappings, environment } = destination.Config;
-  if (
-    !message.context.device ||
-    !message.context.device.type ||
-    !message.context.device.id
-  ) {
+  const device = get(message, "context.device");
+  if (!device || device.type === undefined || device.id === undefined) {
     throw new Error("Device type/id  not present");
   }
-  if (message.context.device.type.toLowerCase() === "android") {
+  const os = get(message, "context.device.type").toLowerCase();
+  if (os === "android") {
     delete payload.idfv;
     delete payload.idfa;
-  } else if (message.context.device.type.toLowerCase() === "ios") {
+  } else if (os === "ios") {
     delete payload.android_id;
     delete payload.gps_adid;
   } else {
