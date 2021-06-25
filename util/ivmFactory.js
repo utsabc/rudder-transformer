@@ -36,9 +36,12 @@ async function createIvm(code, libraryVersionIds) {
       let transformType = transformationPayload.transformationType
       let outputEvents = []
       const eventMessages = events.map(event => event.message);
+      const eventDestinations = events.map(e => e.destination);
       const eventsMetadata = {};
+      const eventsDestdata = {};
       events.forEach(ev => {
         eventsMetadata[ev.message.messageId] = ev.metadata;
+        eventsDestdata[ev.message.messageId] = ev.destination;
       });
 
       const isObject = (o) => Object.prototype.toString.call(o) === '[object Object]';
@@ -47,9 +50,14 @@ async function createIvm(code, libraryVersionIds) {
         const eventMetadata = event ? eventsMetadata[event.messageId] || {} : {};
         return eventMetadata;
       }
+      const destdata = (event) => {
+        const eventDestdata = event ? eventsDestdata[event.messageId] || {} : {};
+        return eventDestdata;
+      }
+      
       switch(transformType) {
         case "transformBatch":
-          const transformedEventsBatch = await transformBatch(eventMessages, metadata);
+          const transformedEventsBatch = await transformBatch(eventMessages, metadata, destdata);
           if (!Array.isArray(transformedEventsBatch)) {
             outputEvents.push({error: "returned events from transformBatch(event) is not an array", metadata: {}});
             break;
@@ -58,14 +66,15 @@ async function createIvm(code, libraryVersionIds) {
             if (!isObject(transformedEvent)) {
               return{error: "returned event in events array from transformBatch(events) is not an object", metadata: {}};
             }
-            return{transformedEvent, metadata: metadata(transformedEvent)};
+            return {transformedEvent, metadata: metadata(transformedEvent)};
           })
           break;
         case "transformEvent":
-          await Promise.all(eventMessages.map(async ev => {
+          await Promise.all(events.map(async event => {
+            const { message: ev, destination } = event;
             const currMsgId = ev.messageId;
             try{
-              let transformedOutput = await transformEvent(ev, metadata);
+              let transformedOutput = await transformEvent(ev, metadata, destination);
               // if func returns null/undefined drop event
               if (transformedOutput === null || transformedOutput === undefined) return;
               if (Array.isArray(transformedOutput)) {

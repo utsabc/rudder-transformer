@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 const { getTransformationCode } = require("./customTransforrmationsStore");
 const { userTransformHandlerV1 } = require("./customTransformer-v1");
 
-async function runUserTransform(events, code, eventsMetadata) {
+async function runUserTransform(events, code, eventsMetadata, eventsDestdata) {
   // TODO: Decide on the right value for memory limit
   const isolate = new ivm.Isolate({ memoryLimit: 128 });
   const context = await isolate.createContext();
@@ -44,6 +44,14 @@ async function runUserTransform(events, code, eventsMetadata) {
     new ivm.Reference((...args) => {
       const eventMetadata = eventsMetadata[args[0].messageId] || {};
       return new ivm.ExternalCopy(eventMetadata).copyInto();
+    })
+  );
+
+  jail.setSync(
+    "_destination",
+    new ivm.Reference((...args) => {
+      const eventDestination = eventsDestdata[args[0].messageId] || {};
+      return new ivm.ExternalCopy(eventDestination).copyInto();
     })
   );
 
@@ -103,6 +111,19 @@ async function runUserTransform(events, code, eventsMetadata) {
             args.map(arg => new ivm.ExternalCopy(arg).copyInto())
             );
           };
+        
+        let destination = _destination;
+        delete _destination;
+        global.destination = function(...args) {
+          // We use 'copyInto()' here so that on the other side we don't have to call 'copy()'. It
+          // doesn't make a difference who requests the copy, the result is the same.
+          // 'applyIgnored' calls 'destination' asynchronously but doesn't return a promise-- it ignores the
+          // return value or thrown exception from 'destination'.
+          return destination.applySync(
+            undefined,
+            args.map(arg => new ivm.ExternalCopy(arg).copyInto())
+          );
+        };
 
         return new ivm.Reference(function forwardMainPromise(
           fnRef,
@@ -176,9 +197,13 @@ async function userTransformHandler(events, versionId, libraryVersionIDs) {
       // Events contain message and destination. We take the message part of event and run transformation on it.
       // And put back the destination after transforrmation
       const eventMessages = events.map(event => event.message);
+      const eventDestinations = events.map(event => event.destination);
       const eventsMetadata = {};
+      const eventsDestdata = {};
+
       events.forEach(ev => {
         eventsMetadata[ev.message.messageId] = ev.metadata;
+        eventsDestdata[ev.message.messageId] = ev.destination;
       });
 
       let userTransformedEvents = [];
@@ -192,7 +217,8 @@ async function userTransformHandler(events, versionId, libraryVersionIDs) {
         userTransformedEvents = await runUserTransform(
           eventMessages,
           res.code,
-          eventsMetadata
+          eventsMetadata,
+          eventsDestdata
         );
         userTransformedEvents = userTransformedEvents.map(ev => ({
           transformedEvent: ev,

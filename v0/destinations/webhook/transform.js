@@ -32,9 +32,11 @@ function process(event) {
       set(message, "context.ip", message.request_ip);
     }
     const response = defaultRequestConfig();
-    const url = destination.Config.webhookUrl;
-    const method = destination.Config.webhookMethod;
+    let url = destination.Config.webhookUrl;
+    let method = destination.Config.webhookMethod;
     const { headers } = destination.Config;
+    // This can be used for Validation of fields that are put in destination. But this is not confirmed
+    const { DestinationDefinition: { Config: { destConfig : { defaultConfig } } } } = destination;
 
     if (url) {
       if (method === defaultGetRequestConfig.requestMethod) {
@@ -47,6 +49,17 @@ function process(event) {
         response.headers = {
           "content-type": "application/json"
         };
+      }
+
+      // Case when Transformation contains destination information
+      // The field "Config" is still undecided - this field name can change in the future
+      if (message.Config) {
+        // validate the schema here
+        // TODO: To do a cleaner & more dev friendly validation, we can use Joi library
+        // if validation fails,
+        // throw new CustomError('Validation Error Message', statusCode);
+        url = message.Config.webhookUrl;
+        response.method = message.Config.webhookMethod;
       }
 
       Object.assign(response.headers, getHashFromArray(headers));
