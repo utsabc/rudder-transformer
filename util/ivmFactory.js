@@ -74,6 +74,7 @@ async function createIvm(code, libraryVersionIds) {
             const { message: ev, destination } = event;
             const currMsgId = ev.messageId;
             try{
+              // Sending destination only for POC, may be this can be fine-tuned to a more granular access to properties in destination object
               let transformedOutput = await transformEvent(ev, metadata, destination);
               // if func returns null/undefined drop event
               if (transformedOutput === null || transformedOutput === undefined) return;
