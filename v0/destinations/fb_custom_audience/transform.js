@@ -1,4 +1,5 @@
 const sha256 = require("sha256");
+const get = require("get-value")
 
 const {
   defaultRequestConfig,
@@ -29,6 +30,7 @@ const {
 } = require("./config");
 
 const logger = require("../../../logger");
+const { MappedToDestinationKey } = require("../../../constants");
 
 const responseBuilderSimple = (payload, audienceId) => {
   if (payload) {
@@ -229,7 +231,20 @@ const prepareResponse = (
   allowedAudienceArray,
   audienceOperation
 ) => {
-  const { accessToken, userSchema, disableFormat } = destination.Config;
+  const { accessToken, disableFormat } = destination.Config;
+  let { userSchema } = destination.Config;
+  const mappedToDestination = get(message, MappedToDestinationKey)
+  
+  // If mapped to destination, use the mapped fields instead of destination userschema
+  if(mappedToDestination) {
+    mappedSchema = get(message, "context.destinationFields")
+    if(!mappedSchema) {
+      throw new CustomError("context.destinationFields is required property for events mapped to destination ", 400)
+    }
+    // context.destinationFields has 2 possible values. An Array of fields or Comma seperated string with field names
+    userSchema = mappedSchema.isArray() ? mappedSchema : mappedSchema.split(",")
+  }
+
   const { properties } = message;
   const prepareParams = {};
   let sessionPayload = {};
