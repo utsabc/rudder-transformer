@@ -236,14 +236,15 @@ const prepareResponse = (
   const mappedToDestination = get(message, MappedToDestinationKey)
   
   // If mapped to destination, use the mapped fields instead of destination userschema
-  if(mappedToDestination) {
-    mappedSchema = get(message, "context.destinationFields")
-    if(!mappedSchema) {
-      throw new CustomError("context.destinationFields is required property for events mapped to destination ", 400)
-    }
-    // context.destinationFields has 2 possible values. An Array of fields or Comma seperated string with field names
-    userSchema = mappedSchema.isArray() ? mappedSchema : mappedSchema.split(",")
+ if(mappedToDestination) {
+  mappedSchema = get(message, "context.destinationFields")
+  if(!mappedSchema) {
+    throw new CustomError("context.destinationFields is required property for events mapped to destination ", 400)
   }
+  // context.destinationFields has 2 possible values. An Array of fields or Comma seperated string with field names
+  userSchema = Array.isArray(mappedSchema) ? mappedSchema : mappedSchema.split(",")
+  userSchema = userSchema.map((field) => field.trim())
+}
 
   const { properties } = message;
   const prepareParams = {};
@@ -285,8 +286,8 @@ const processEvent = (message, destination) => {
   const respList = [];
   const toSendEvents = [];
   let wrappedResponse = {};
+  let { userSchema } = destination.Config
   const {
-    userSchema,
     isHashRequired,
     audienceId,
     maxUserCount
@@ -302,7 +303,7 @@ const processEvent = (message, destination) => {
   if (Number.isNaN(maxUserCountNumber)) {
     throw new CustomError("Batch size must be an Integer.", 400);
   }
-  if (message.type !== "audiencelist") {
+  if (message.type.toLowerCase() !== "audiencelist") {
     throw new CustomError(` ${message.type} call is not supported `, 400);
   }
   const operationAudienceId = audienceId;
@@ -310,6 +311,19 @@ const processEvent = (message, destination) => {
   if (!isDefinedAndNotNullAndNotEmpty(operationAudienceId)) {
     throw new CustomError("Audience ID is a mandatory field", 400);
   }
+
+  const mappedToDestination = get(message, MappedToDestinationKey)
+ // If mapped to destination, use the mapped fields instead of destination userschema
+ if(mappedToDestination) {
+    mappedSchema = get(message, "context.destinationFields")
+    if(!mappedSchema) {
+      throw new CustomError("context.destinationFields is required property for events mapped to destination ", 400)
+    }
+    // context.destinationFields has 2 possible values. An Array of fields or Comma seperated string with field names
+    userSchema = Array.isArray(mappedSchema) ? mappedSchema : mappedSchema.split(",")
+    userSchema = userSchema.map((field) => field.trim())
+  }
+
 
   // when configured schema field is different from the allowed fields
   if (!checkSubsetOfArray(schemaFields, userSchema)) {
