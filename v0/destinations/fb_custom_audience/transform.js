@@ -237,14 +237,8 @@ const prepareResponse = (
   
   // If mapped to destination, use the mapped fields instead of destination userschema
  if(mappedToDestination) {
-  mappedSchema = get(message, "context.destinationFields")
-  if(!mappedSchema) {
-    throw new CustomError("context.destinationFields is required property for events mapped to destination ", 400)
+    userSchema = getSchemaForEventMappedToDest(message)
   }
-  // context.destinationFields has 2 possible values. An Array of fields or Comma seperated string with field names
-  userSchema = Array.isArray(mappedSchema) ? mappedSchema : mappedSchema.split(",")
-  userSchema = userSchema.map((field) => field.trim())
-}
 
   const { properties } = message;
   const prepareParams = {};
@@ -281,6 +275,17 @@ const prepareResponse = (
   return prepareParams;
 };
 
+const getSchemaForEventMappedToDest = (message) => {
+  let mappedSchema = get(message, "context.destinationFields")
+  if(!mappedSchema) {
+    throw new CustomError("context.destinationFields is required property for events mapped to destination ", 400)
+  }
+  // context.destinationFields has 2 possible values. An Array of fields or Comma seperated string with field names
+  let userSchema = Array.isArray(mappedSchema) ? mappedSchema : mappedSchema.split(",")
+  userSchema = userSchema.map((field) => field.trim())
+  return userSchema
+}
+
 const processEvent = (message, destination) => {
   let response;
   const respList = [];
@@ -315,13 +320,7 @@ const processEvent = (message, destination) => {
   const mappedToDestination = get(message, MappedToDestinationKey)
  // If mapped to destination, use the mapped fields instead of destination userschema
  if(mappedToDestination) {
-    mappedSchema = get(message, "context.destinationFields")
-    if(!mappedSchema) {
-      throw new CustomError("context.destinationFields is required property for events mapped to destination ", 400)
-    }
-    // context.destinationFields has 2 possible values. An Array of fields or Comma seperated string with field names
-    userSchema = Array.isArray(mappedSchema) ? mappedSchema : mappedSchema.split(",")
-    userSchema = userSchema.map((field) => field.trim())
+    userSchema = getSchemaForEventMappedToDest(message)
   }
 
 
